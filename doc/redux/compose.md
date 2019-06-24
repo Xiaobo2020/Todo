@@ -13,4 +13,6 @@ export default function compose(...funcs) {
 }
 ```
 
+## Currie
+
 ## Analysis
