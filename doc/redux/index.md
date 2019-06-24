@@ -19,8 +19,9 @@ src
 
 ## Analysis
 ### utils
-
 #### actionTypes.js
+`actionTypes.js`保存了`redux`中的一些私有action类型，根据名称也很好理解，这里就不过多赘述了。
+
 ```javascript
 const randomString = () =>
   Math.random()
@@ -37,9 +38,9 @@ const ActionTypes = {
 export default ActionTypes
 ```
 
-保存了`redux`中的一些私有action类型，根据名称也很好理解，这里就不过多赘述了。
-
 #### isPlainObject.js
+`isPlainObject.js`用于判断是否是一个简单对象，这里简单的意思是指是否是单纯的`object`，如数组、函数等就不是，主要依靠的是`Object.getPrototypeOf`获取当前对象的原型，通过当前对象的直接原型和最终原型（即`object`）相比较判断是否是简单对象。
+
 ```javascript
 export default function isPlainObject(obj) {
   if (typeof obj !== 'object' || obj === null) return false
@@ -53,9 +54,10 @@ export default function isPlainObject(obj) {
 }
 ```
 
-用于判断是否是一个简单对象，这里简单的意思是指是否是单纯的`object`，如数组、函数等就不是，主要依靠的是`Object.getPrototypeOf`获取当前对象的原型，通过当前对象的直接原型和最终原型（即`object`）相比较判断是否是简单对象。
 
 #### warning.js
+`warning.js`用于提供一个显示警告信息的通用方法，接受一条错误信息，如果支持`console.error`则会先使用这条命令打印警告信息，再抛出一个Error，不过会在方法中被`catch`掉，没有其他操作。
+
 ```javascript
 export default function warning(message) {
   if (typeof console !== 'undefined' && typeof console.error === 'function') {
@@ -67,10 +69,7 @@ export default function warning(message) {
 }
 ```
 
-用于提供一个显示警告信息的通用方法，接受一条错误信息，如果支持`console.error`则会先使用用这条命令打印警告信息，再抛出一个Error，不过会在方法中被`catch`掉，没有其他操作。
-
-### Index.js
-
+### index.js
 `index.js`是redux的入口文件，主要负责判断当前是否是正确的生产环境版本，以及最主要的：向用户提供api，如基本的`createStore`就是在这里导出给用户的。
 
 ```javascript
@@ -95,5 +94,4 @@ export {
 ```
 
 ## Next
-
 [compose](./compose.md)
