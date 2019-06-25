@@ -76,5 +76,4 @@ addByCurrying(1)(2); // -> 3
 
 
 ## Previous
-
 [index](./index.md)
