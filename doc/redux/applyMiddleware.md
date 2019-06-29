@@ -131,11 +131,13 @@ const chain = middlewares.map(function fn5(middleware) {
 dispatch = compose(...chain)(store.dispatch);
 ```
 
-对applyMiddlewares中接受到的rest参数middlewares使用一个map遍历，处理函数fn5的工作是将middlewareAPI注入到中间件中，以logger为例，这里的middlewareAPI就是logger的入参store，同时返回第二层的函数（以next为入参），所以我们知道，`chain`其实就是把所有的中间件都先行注入middlewareAPI后的以next为入参的函数组成的数组，或者可以说，chains中包含了一系列函数，这些函数都被统一注入了middlewareAPI，并且接受next作为入参。
+对applyMiddlewares中接受到的rest参数middlewares使用一个map遍历，处理函数fn5的工作是将middlewareAPI注入到中间件中，以logger为例，这里的middlewareAPI就是logger的入参store，同时返回第二层的函数（以next为入参），所以我们知道，`chain`其实就是把所有的中间件都先行注入middlewareAPI后的以next为入参的函数组成的数组，或者可以说，chain中包含了一系列函数，这些函数都被统一注入了middlewareAPI，并且接受next作为入参。
 
 顺带提一下，由middlewareAPI也可以看出，在编写中间件的时候，能拿到的store的api其实就只有两个——getState和dispatch，并且这里的dispatch还是看上去没什么用的本地创建的西贝货dispatch，只能抛出错误。
 
 接着就用到了上一篇提到的compose函数了，这里是接受chain数组展开的散列作为参数，返回一个由多个中间件嵌套的函数，这个函数接受`store.dispatch`作为入参，参考logger就是第二层中的`next`参数，这样我们就得到了一个处理过的、包含了中间件增强功能的dispatch函数（此时已经将那个只会throw Error的dispatch替换掉了）。
+
+如果看过compose就可以知道，入参的顺序决定执行的顺序，所以我们一般将logger中间件尽可能放在applyMiddleware的后面就可以理解了，为了第一步就执行logger。
 
 ### 4. 收尾
 最终返回一个对象作为用户创建的store，和普通的由createStore创建的store不同的地方在于，这里提供的dispatch是经过了处理的，从这一点上也能很明确看到之前提过的，中间件的作用就是对普通的dispatch进行了增强。
