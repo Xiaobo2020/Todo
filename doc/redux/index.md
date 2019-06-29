@@ -93,5 +93,7 @@ export {
 }
 ```
 
-## Next
+## All
+[index](./index.md)
 [compose](./compose.md)
+[applyMiddleware](./applyMiddleware.md)
