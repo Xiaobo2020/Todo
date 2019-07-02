@@ -153,3 +153,4 @@ return {
 [index](./index.md)
 [compose](./compose.md)
 [applyMiddleware](./applyMiddleware.md)
+[bindActionCreators](./bindActionCreators.md)

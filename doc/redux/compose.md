@@ -79,3 +79,4 @@ addByCurrying(1)(2); // -> 3
 [index](./index.md)
 [compose](./compose.md)
 [applyMiddleware](./applyMiddleware.md)
+[bindActionCreators](./bindActionCreators.md)
