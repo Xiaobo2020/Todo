@@ -154,3 +154,4 @@ return {
 [compose](./compose.md)
 [applyMiddleware](./applyMiddleware.md)
 [bindActionCreators](./bindActionCreators.md)
+[combineReducers](./combineReducers.md)
