@@ -4,6 +4,9 @@
 + [ ] react-redux
 + [ ] mobx
 + [ ] mobx-react
++ [ ] vue
++ [ ] vuex
++ [ ] vue-router
 
 ## DONE
 
