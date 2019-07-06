@@ -53,3 +53,4 @@ console.log(store.getState());
 [applyMiddleware](./applyMiddleware.md)
 [bindActionCreators](./bindActionCreators.md)
 [combineReducers](./combineReducers.md)
+[createStore](./createStore.md)

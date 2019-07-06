@@ -186,7 +186,7 @@ function dispatch(action) {
     // 利用isDispatching判断当前是否正在进行dipatch操作
     throw new Error('Reducers may not dispatch actions.')
   }
-
+  // 更新标示，并利用当前reducer更新state
   try {
     isDispatching = true
     currentState = currentReducer(currentState, action)
@@ -194,9 +194,10 @@ function dispatch(action) {
     isDispatching = false
   }
 
-  // 通过nextListeners获得最新的当前事件监听数组，遍历触发监听事件
+  // 通过nextListeners获得最新的当前事件监听数组
   const listeners = (currentListeners = nextListeners)
   for (let i = 0; i < listeners.length; i++) {
+    // 遍历触发监听事件
     const listener = listeners[i]
     listener()
   }
@@ -217,10 +218,12 @@ function dispatch(action) {
 ```javascript
 function replaceReducer(nextReducer) {
   if (typeof nextReducer !== 'function') {
+    // 判断nextReducer是否是符合要求的函数类型
     throw new Error('Expected the nextReducer to be a function.')
   }
-
+  // 更新当前reducer为最新的reducer
   currentReducer = nextReducer
+  // 触发一次REPLACE类型的action用于使用最新的reducer更新当前store中state数据
   dispatch({ type: ActionTypes.REPLACE })
 }
 ```
@@ -228,6 +231,51 @@ function replaceReducer(nextReducer) {
 
 ### observable
 ```javascript
+function observable() {
+  // 根据subscribe方法定义outerSubscribe方法，备用
+  const outerSubscribe = subscribe
+  // 返回一个包含subscribe方法的对象
+  return {
+    /**
+     * The minimal observable subscription method.
+     * @param {Object} observer Any object that can be used as an observer.
+     * The observer object should have a `next` method.
+     * @returns {subscription} An object with an `unsubscribe` method that can
+     * be used to unsubscribe the observable from the store, and prevent further
+     * emission of values from the observable.
+     */
+    subscribe(observer) {
+      // 接受一个对象作为观察者observer
+      if (typeof observer !== 'object' || observer === null) {
+        // 校验observer类型
+        throw new TypeError('Expected the observer to be an object.')
+      }
+      // 定义一个监听state的方法
+      function observeState() {
+        if (observer.next) {
+          // 运行observer对象的next方法，以当前store的state作为入参
+          observer.next(getState())
+        }
+      }
+      // 执行一次observerState方法
+      observeState()
+      // 定义解除监听的方法，并作为一个对象的属性，返回该对象
+      const unsubscribe = outerSubscribe(observeState)
+      return { unsubscribe }
+    },
+    // 获取当前对象的this指向
+    [$$observable]() {
+      return this
+    }
+  }
+}
 ```
+坦白说，之前从来没有接触、使用过这个api，所以对于其作用知之甚少，暂时只能通过代码层面来解读其作用，后面可以进一步了解一下。
 
 ## All
+[index](./index.md)
+[compose](./compose.md)
+[applyMiddleware](./applyMiddleware.md)
+[bindActionCreators](./bindActionCreators.md)
+[combineReducers](./combineReducers.md)
+[createStore](./createStore.md)

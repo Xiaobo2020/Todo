@@ -73,3 +73,4 @@ const addTodoBindDispatch = bindActionCreators(addTodo, store.dispatch);
 [applyMiddleware](./applyMiddleware.md)
 [bindActionCreators](./bindActionCreators.md)
 [combineReducers](./combineReducers.md)
+[createStore](./createStore.md)

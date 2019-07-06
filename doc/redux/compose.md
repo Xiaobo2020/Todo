@@ -80,3 +80,4 @@ addByCurrying(1)(2); // -> 3
 [applyMiddleware](./applyMiddleware.md)
 [bindActionCreators](./bindActionCreators.md)
 [combineReducers](./combineReducers.md)
+[createStore](./createStore.md)
