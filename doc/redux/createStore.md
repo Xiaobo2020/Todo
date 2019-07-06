@@ -273,9 +273,9 @@ function observable() {
 坦白说，之前从来没有接触、使用过这个api，所以对于其作用知之甚少，暂时只能通过代码层面来解读其作用，后面可以进一步了解一下。
 
 ## All
-[index](./index.md)
-[compose](./compose.md)
-[applyMiddleware](./applyMiddleware.md)
-[bindActionCreators](./bindActionCreators.md)
-[combineReducers](./combineReducers.md)
-[createStore](./createStore.md)
++ [index](./index.md)
++ [compose](./compose.md)
++ [applyMiddleware](./applyMiddleware.md)
++ [bindActionCreators](./bindActionCreators.md)
++ [combineReducers](./combineReducers.md)
++ [createStore](./createStore.md)

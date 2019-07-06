@@ -150,9 +150,9 @@ return {
 ```
 
 ## All
-[index](./index.md)
-[compose](./compose.md)
-[applyMiddleware](./applyMiddleware.md)
-[bindActionCreators](./bindActionCreators.md)
-[combineReducers](./combineReducers.md)
-[createStore](./createStore.md)
++ [index](./index.md)
++ [compose](./compose.md)
++ [applyMiddleware](./applyMiddleware.md)
++ [bindActionCreators](./bindActionCreators.md)
++ [combineReducers](./combineReducers.md)
++ [createStore](./createStore.md)

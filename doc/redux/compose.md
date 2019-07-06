@@ -75,9 +75,9 @@ addByCurrying(1)(2); // -> 3
 讲完了柯里化的含义，那么为什么要费劲套这么多层去实现一个a+b？那肯定是有他的好处的，想了解具体的就移步这里——[详解JS函数柯里化](https://www.jianshu.com/p/2975c25e4d71)，感觉这篇文章中写的很清楚了。
 
 ## All
-[index](./index.md)
-[compose](./compose.md)
-[applyMiddleware](./applyMiddleware.md)
-[bindActionCreators](./bindActionCreators.md)
-[combineReducers](./combineReducers.md)
-[createStore](./createStore.md)
++ [index](./index.md)
++ [compose](./compose.md)
++ [applyMiddleware](./applyMiddleware.md)
++ [bindActionCreators](./bindActionCreators.md)
++ [combineReducers](./combineReducers.md)
++ [createStore](./createStore.md)

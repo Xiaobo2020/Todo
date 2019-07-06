@@ -68,9 +68,9 @@ const addTodoBindDispatch = bindActionCreators(addTodo, store.dispatch);
 > PS. 多说一句，感觉这个api并没有什么卵用
 
 ## All
-[index](./index.md)
-[compose](./compose.md)
-[applyMiddleware](./applyMiddleware.md)
-[bindActionCreators](./bindActionCreators.md)
-[combineReducers](./combineReducers.md)
-[createStore](./createStore.md)
++ [index](./index.md)
++ [compose](./compose.md)
++ [applyMiddleware](./applyMiddleware.md)
++ [bindActionCreators](./bindActionCreators.md)
++ [combineReducers](./combineReducers.md)
++ [createStore](./createStore.md)
