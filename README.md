@@ -1,6 +1,6 @@
 ## TODO
 
-+ [ ] redux-thunk
++ [ ] [redux-thunk](https://github.com/reduxjs/redux-thunk)
 + [ ] react-redux
 + [ ] mobx
 + [ ] mobx-react
