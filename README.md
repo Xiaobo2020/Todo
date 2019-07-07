@@ -1,6 +1,5 @@
 ## TODO
 
-+ [ ] [redux-thunk](https://github.com/reduxjs/redux-thunk)
 + [ ] react-redux
 + [ ] mobx
 + [ ] mobx-react
@@ -11,3 +10,4 @@
 ## DONE
 
 + [x] [redux](https://github.com/reduxjs/redux)
++ [x] [redux-thunk](https://github.com/reduxjs/redux-thunk)
