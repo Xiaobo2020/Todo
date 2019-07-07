@@ -1,6 +1,6 @@
 ## Preface
 首先需要明确的一点是，`redux-thunk`是一个中间件，需要配合redux提供的`applyMiddleware`一起使用，主要是将常规的对象类型的`action`扩展为可接受函数类型的`action`。它可以让原本只支持同步方式的redux扩展为支持异步的方式，这就是它的强大之处，但是这个背后的实现逻辑却是一点都不复杂。
-`
+
 > 当前版本为`redux-thunk@2.3.0`，可能会根据版本不同存在些许差异，不过不影响。
 
 ## Source Time
@@ -59,7 +59,7 @@ function incrementAsync() {
 }
 ```
 
-上面这段是截取自`redux-thunk`官方的例子，可以看到不同于一般同步方式的action creator——increment返回的是一个包含了type的对象，`incrementAsync`返回的是一个接受dispatch为入参的匿名函数，在这个函数中可以异步的方式调用dispatch，这也是现在异步请求结合thunk最常用的方式。
+上面这段是截取自`redux-thunk`官方的例子，可以看到不同于一般同步方式的action creator——increment返回的是一个包含了type的对象，`incrementAsync`返回的是一个接受dispatch为入参的匿名函数，在这个函数中可以异步的方式调用dispatch，这也是现在异步请求结合thunk最常用的方式。当然这里的`incrementAsync`中的匿名函数只用到了`dispatch`这一个入参，其实总共可以有三个——dispatch、getState以及某些情况下的支持注入额外参数extraArgument，不过默认的thunk是不带这个额外参数的，如果想要使用额外参数那么需要用到thunk上的`withExtraArgument`。
 
 总结来说，`redux-thunk`扩展了`redux`能够接受的`action`的类型，不过套用redux中文文档中关于异步流的一句话
 
