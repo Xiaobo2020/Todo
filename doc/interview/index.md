@@ -54,6 +54,7 @@
 + [ ] 原型链、继承、对象的创建
 + [ ] 深拷贝
 + [ ] 简单浅拷贝：Object.assign和rest
++ [ ] 用setTimeout实现setInterval
 + [ ] 浏览器从url输入到页面加载完成的整个过程（包括dom、css的render过程）
 + [ ] CSS双列布局的几种实现
 + [ ] 水平垂直居中的几种实现
@@ -62,9 +63,12 @@
 + [ ] 文档流概念
 + [ ] 移动端适配1px
 + [ ] 单文本溢出、多文本溢出的实现
-+ [ ] viewport
++ [ ] 清除浮动
++ [ ] addEventListener()有几个参数
++ [ ] viewport属性
 + [ ] less和sass（预编译）
 + [ ] h5新特性
++ [ ] html重绘和回流的区别
 + [ ] iframe优缺点
 + [ ] webpack插件和loader区别
 + [ ] webpack优化，loader实现机制和原理，项目优化，如何加快打包速度，如何做到tree shaking
@@ -72,3 +76,9 @@
 + [ ] git命令合并多个分支：git rebase
 + [ ] 前端性能优化的方向
 + [ ] 如何发布npm包
++ [ ] 做过的项目：工程角度、模块角度分析，如何push自身工作内容
++ [ ] hybrid通信实现原理
++ [ ] 实现将数组组合[['a', 'b', 'c'], ['d', 'e']] => ['ad', 'ae', 'bd', 'be', 'cd', 'ce']
++ [ ] 手写闭包
++ [ ] 手写parseInt
++ [ ] 事件的冒泡和捕获
